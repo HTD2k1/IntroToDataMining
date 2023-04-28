@@ -25,6 +25,7 @@ public class StrokePrediction {
         return data;
     }
 
+    // Step 1 
     public static Instances preprocessData(Instances data) throws Exception {
         Remove removeFilter = new Remove();
         removeFilter.setAttributeIndices("1");
@@ -51,6 +52,7 @@ public class StrokePrediction {
         return data;
     }
 
+    //Step 2
     public static ArrayList<Classifier> getClassifiers() {
         ArrayList<Classifier> classifiers = new ArrayList<>();
         classifiers.add(new Logistic());
@@ -67,6 +69,7 @@ public class StrokePrediction {
         return classifierNames;
     }
 
+    //Step 4 
     public static void evaluateClassifiers(Instances data, ArrayList<Classifier> classifiers, ArrayList<String> classifierNames) throws Exception {
         for (int i = 0; i < classifiers.size(); i++) {
             Classifier classifier = classifiers.get(i);
