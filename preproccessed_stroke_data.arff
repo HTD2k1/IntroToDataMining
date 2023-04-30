@@ -1,4 +1,18 @@
-gender,age,hypertension,heart_disease,ever_married,work_type,Residence_type,avg_glucose_level,bmi,smoking_status,stroke
+@relation healthcare-dataset-stroke-data-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.ReplaceMissingValues-weka.filters.unsupervised.attribute.NumericToNominal-Rlast-weka.filters.supervised.instance.SMOTE-C0-K5-P100.0-S1
+
+@attribute gender {Male,Female,Other}
+@attribute age numeric
+@attribute hypertension numeric
+@attribute heart_disease numeric
+@attribute ever_married {Yes,No}
+@attribute work_type {Private,Self-employed,Govt_job,children,Never_worked}
+@attribute Residence_type {Urban,Rural}
+@attribute avg_glucose_level numeric
+@attribute bmi numeric
+@attribute smoking_status {'formerly smoked','never smoked',smokes,Unknown}
+@attribute stroke {0,1}
+
+@data
 Male,67,0,1,Yes,Private,Urban,228.69,36.6,'formerly smoked',1
 Female,61,0,0,Yes,Self-employed,Rural,202.21,28.893237,'never smoked',1
 Male,80,0,1,Yes,Private,Rural,105.92,32.5,'never smoked',1
@@ -5109,3 +5123,252 @@ Female,81,0,0,Yes,Self-employed,Urban,125.2,40,'never smoked',0
 Female,35,0,0,Yes,Self-employed,Rural,82.99,30.6,'never smoked',0
 Male,51,0,0,Yes,Private,Rural,166.29,25.6,'formerly smoked',0
 Female,44,0,0,Yes,Govt_job,Urban,85.28,26.2,Unknown,0
+Male,67.054665,0,1,Yes,Private,Rural,225.250527,36.170774,'formerly smoked',1
+Male,60.262434,0,0,Yes,Private,Urban,200.965186,35.242816,'never smoked',1
+Female,78.680601,0,0.201713,Yes,Private,Urban,105.814617,31.992538,'never smoked',1
+Female,49.825966,0.172218,0,Yes,Private,Urban,168.360109,32.401359,'never smoked',1
+Male,79,0.201383,0,Yes,Private,Urban,173.234087,24.05415,'formerly smoked',1
+Male,81,0,0,Yes,Private,Rural,185.682102,27.57521,'formerly smoked',1
+Male,74.754985,0.621571,0.863576,Yes,Private,Urban,68.868408,25.583378,'never smoked',1
+Male,69,0,0,Yes,Private,Urban,94.302402,27.553038,Unknown,1
+Male,62.806256,0,0.344828,Yes,Private,Urban,74.176902,28.848359,Unknown,1
+Female,78.420972,0.63287,0.699859,Yes,Self-employed,Rural,59.317328,26.88275,'formerly smoked',1
+Female,81.290716,1,0.251696,Yes,Private,Urban,81.812273,29.332305,'never smoked',1
+Male,65.543073,0.196147,0.190875,Yes,Private,Urban,118.004781,34.158624,'formerly smoked',1
+Female,56.996765,0,0,Yes,Private,Rural,105.067084,28.248851,smokes,1
+Male,78.145938,0.483844,1,Yes,Private,Urban,218.296512,27.959423,'never smoked',1
+Male,81.452112,0.977582,1,Yes,Private,Urban,214.820301,28.114822,Unknown,1
+Female,50.077085,0.224879,0,Yes,Private,Urban,165.521669,30.149799,'never smoked',1
+Male,66.497375,0.80202,0.204067,Yes,Private,Rural,191.425697,37.103478,'formerly smoked',1
+Male,74.658281,0.194609,0.13979,Yes,Private,Urban,221.145003,25.875684,Unknown,1
+Male,59.238276,0,0,Yes,Private,Urban,86.596178,33.349378,Unknown,1
+Male,57,0,1,Yes,Private,Urban,216.788269,30.343208,Unknown,1
+Female,70.039318,0,0.076164,Yes,Self-employed,Urban,195.086381,26.3002,smokes,1
+Male,66.458002,0.1663,0,Yes,Private,Urban,233.915454,46.316015,'never smoked',1
+Male,77.260226,0.944297,0,Yes,Private,Urban,227.743119,26.048925,'never smoked',1
+Male,80.915588,0,1,Yes,Private,Urban,207.290951,31.362955,Unknown,1
+Male,73.543718,0,0,Yes,Private,Urban,105.199686,27.417875,Unknown,1
+Male,79.839869,0,0,Yes,Private,Urban,109.469507,23.993945,'formerly smoked',1
+Female,67.964521,0,0,Yes,Private,Urban,100.856776,28.007025,'formerly smoked',1
+Male,60.67288,0,0,Yes,Private,Urban,195.38496,28.893237,'formerly smoked',1
+Male,69.891425,0,0.607572,Yes,Self-employed,Urban,195.449783,29.373803,'formerly smoked',1
+Male,60.694919,0,0.423202,Yes,Private,Urban,211.679379,28.893237,Unknown,1
+Female,57,0.996243,0,Yes,Private,Urban,217.341356,37.521246,smokes,1
+Female,49.659995,0.784332,0,Yes,Private,Urban,85.17984,26.916032,'never smoked',1
+Female,80.242536,1,0,Yes,Self-employed,Urban,195.302125,24.520765,'formerly smoked',1
+Male,77.693058,0.727537,0.403946,Yes,Private,Urban,245.242972,33.239665,'formerly smoked',1
+Male,52.848264,0,0,Yes,Private,Urban,85.141602,29.983112,'never smoked',1
+Female,81.413685,0.838939,0.000305,Yes,Private,Rural,81.731049,24.084472,'never smoked',1
+Male,72.777262,0,0,Yes,Private,Urban,219.853835,30.609963,'never smoked',1
+Female,73.305652,0.641143,0,Yes,Private,Rural,74.88315,24.940064,'formerly smoked',1
+Male,57.982193,0,0,Yes,Private,Urban,88.561167,31.709489,smokes,1
+Female,55.380527,0.705004,0,Yes,Private,Urban,65.066437,31.597455,'never smoked',1
+Female,78.160806,0.629334,0,Yes,Private,Rural,76.719964,24.795609,'never smoked',1
+Male,56.273336,0,0,Yes,Private,Urban,73.263039,28.731509,'formerly smoked',1
+Male,81.953351,0.217282,0.539525,Yes,Private,Urban,137.487002,25.88147,'formerly smoked',1
+Male,60.37739,0,0,Yes,Private,Urban,88.524939,29.943332,'formerly smoked',1
+Male,59.259611,0.567722,0,Yes,Private,Urban,212.642094,23.534833,Unknown,1
+Male,77.389411,0.857594,0,Yes,Private,Urban,243.052379,32.65711,'never smoked',1
+Female,75.080024,0,0.660896,Yes,Self-employed,Urban,110.418655,28.893237,Unknown,1
+Male,58.290254,0,0,Yes,Private,Urban,110.901414,32.367875,'formerly smoked',1
+Male,81,0,0,Yes,Private,Urban,97.863294,32.65438,'never smoked',1
+Female,45.008666,0.067125,0,Yes,Private,Urban,59.846449,37.593941,'never smoked',1
+Male,71.566701,0.578464,0,Yes,Self-employed,Urban,89.715794,28.893237,'never smoked',1
+Male,77.19127,0.43701,0,Yes,Private,Rural,75.291098,27.937226,'never smoked',1
+Female,77.120586,0.055565,0.323005,Yes,Private,Urban,124.829004,30.132787,'never smoked',1
+Male,77.997461,0.258476,0,Yes,Private,Urban,121.569344,28.682446,'never smoked',1
+Male,63,0,0.008343,Yes,Private,Urban,196.791068,30.644405,'formerly smoked',1
+Male,63.812887,0,1,Yes,Private,Urban,196.647744,36.655015,'formerly smoked',1
+Female,78.344593,0,0,Yes,Private,Rural,58.438586,32.762805,'formerly smoked',1
+Male,79.865877,0.144325,0,Yes,Private,Rural,238.096083,27.496684,'never smoked',1
+Male,75.73413,1,0,Yes,Self-employed,Urban,194.795681,28.83526,'never smoked',1
+Female,54.91426,0.690612,0,Yes,Private,Urban,183.588817,33.563289,'formerly smoked',1
+Male,54.406902,0.224798,0,Yes,Private,Urban,183.140625,28.04392,'formerly smoked',1
+Female,80.69456,1,0,Yes,Private,Rural,74.381308,23.943124,'never smoked',1
+Female,63.491096,0.286875,0,Yes,Self-employed,Rural,61.766383,26.478706,'formerly smoked',1
+Female,49.651931,0,0,Yes,Private,Rural,96.000386,27.73262,smokes,1
+Female,76.405827,0,0,Yes,Private,Urban,105.026457,32.731627,'formerly smoked',1
+Male,77.348906,0.252002,0.656512,Yes,Private,Urban,112.374138,24.030826,'formerly smoked',1
+Male,72.114665,0,0,Yes,Private,Urban,220.020526,35.470768,'formerly smoked',1
+Male,80.823203,0,0.564801,Yes,Private,Urban,104.24233,24.507223,'formerly smoked',1
+Male,61.319922,0,0,Yes,Private,Urban,87.619747,29.582419,'formerly smoked',1
+Male,80.409871,0.995503,0,Yes,Private,Urban,72.803489,27.764995,'never smoked',1
+Female,76,0,0,Yes,Self-employed,Rural,59.229417,28.893237,'formerly smoked',1
+Male,69.549938,1,0,Yes,Private,Rural,182.354509,36.943709,'never smoked',1
+Male,61.800237,0.048406,0.587987,Yes,Self-employed,Rural,115.166978,27.407645,'formerly smoked',1
+Male,64.378584,0,0.673456,Yes,Private,Urban,228.591444,33.116431,'never smoked',1
+Female,54.641477,0,0,Yes,Private,Rural,93.52382,25.900779,smokes,1
+Female,79.983848,0,0.177194,Yes,Private,Urban,67.240546,23.965863,'never smoked',1
+Male,79.710962,0.869785,0,Yes,Private,Urban,237.265622,28.988852,'never smoked',1
+Male,76.888385,0,0.390956,Yes,Private,Urban,110.844088,28.697398,'formerly smoked',1
+Female,55.000813,0,0,Yes,Private,Urban,155.662189,28.701546,'never smoked',1
+Male,48.332854,0.797283,0,Yes,Private,Urban,150.087476,35.261044,'formerly smoked',1
+Male,58.150127,0,0,Yes,Private,Urban,94.605959,40.092797,Unknown,1
+Female,67.68175,0,0,Yes,Private,Urban,98.906018,28.253266,'formerly smoked',1
+Female,78.706889,0,0,No,Private,Urban,89.723402,26.753336,'never smoked',1
+Female,68,0.808906,0,Yes,Self-employed,Urban,81.207114,28.454132,'never smoked',1
+Male,55.789565,0,0,Yes,Private,Urban,71.215825,28.702877,Unknown,1
+Female,54.66248,0,0,Yes,Private,Rural,97.060161,28.51567,smokes,1
+Male,63.662374,0,0.301109,Yes,Private,Rural,111.826731,27.731343,'formerly smoked',1
+Female,73.182417,0,0.461281,Yes,Private,Rural,59.59799,29.558935,'formerly smoked',1
+Male,50.025064,0,0,Yes,Private,Urban,87.764847,33.869033,'formerly smoked',1
+Male,77.244223,0.23103,0,Yes,Private,Urban,98.109146,23.325212,'formerly smoked',1
+Female,79,0,0.752509,Yes,Private,Urban,228.23218,28.320847,'never smoked',1
+Female,81,0.54284,0,Yes,Private,Urban,73.902275,25.809018,'never smoked',1
+Female,53.874335,0,0,Yes,Private,Urban,66.402468,40.227592,'never smoked',1
+Female,80,0.731301,0.769717,Yes,Private,Urban,68.539102,25.010944,'never smoked',1
+Female,47.563299,0.077606,0,Yes,Private,Urban,62.883161,29.629849,'never smoked',1
+Male,75.992965,0,0,Yes,Private,Rural,232.682886,34.193184,'never smoked',1
+Female,71.459686,0,0,Yes,Self-employed,Urban,75.391925,25.719436,'formerly smoked',1
+Male,56.775797,0.649087,0.305329,Yes,Private,Rural,247.697978,33.117999,'never smoked',1
+Male,58.972193,0.40526,0,Yes,Private,Urban,84.38743,29.421581,'formerly smoked',1
+Male,68.823539,0.718463,0,Yes,Self-employed,Urban,80.468483,29.308406,'never smoked',1
+Male,62.819372,0,0.325557,Yes,Self-employed,Urban,72.966681,28.821168,Unknown,1
+Male,73.26614,0.176887,0,Yes,Private,Rural,190.293053,35.494804,'never smoked',1
+Female,76.55227,0,0.489218,Yes,Private,Urban,229.76258,30.713796,'formerly smoked',1
+Female,80.674702,0.6149,0.837307,Yes,Private,Rural,77.202134,19.402529,'never smoked',1
+Male,58.437458,0,0,Yes,Private,Urban,110.644522,28.886847,smokes,1
+Male,58.625368,0.797572,0,Yes,Private,Urban,79.589439,27.531369,'formerly smoked',1
+Male,53.08907,0.094635,0,Yes,Private,Urban,71.988666,28.695078,'never smoked',1
+Male,55.719666,0,0,Yes,Private,Urban,186.318141,40.4,'formerly smoked',1
+Female,78.236778,0.934628,0,Yes,Private,Urban,93.092001,26.64006,'never smoked',1
+Female,53,0.146148,0,Yes,Private,Urban,62.696633,30.814469,'never smoked',1
+Female,79,0,1,Yes,Private,Urban,129.812958,25.162286,'never smoked',1
+Female,80.905054,0,0.786938,Yes,Private,Urban,69.098566,24.422703,'never smoked',1
+Female,76.909645,0,0,Yes,Private,Urban,105.341853,28.979803,'formerly smoked',1
+Female,53.373368,0,0,Yes,Private,Urban,222.268078,51.191646,'never smoked',1
+Female,68.065081,0,0,Yes,Self-employed,Urban,80.189381,24.767751,'never smoked',1
+Male,71.392609,1,0.57074,Yes,Private,Urban,219.990714,30.754822,'never smoked',1
+Male,60.57191,0.947861,0,Yes,Private,Urban,76.141748,28.637543,Unknown,1
+Male,74,0.189352,0.316523,Yes,Private,Urban,72.30966,30.016801,'never smoked',1
+Female,42.042529,0,0,Yes,Private,Urban,78.855005,27.091749,'never smoked',1
+Female,78.189175,0,0.972379,Yes,Private,Urban,105.578532,31.04397,'never smoked',1
+Female,57.959573,0.463719,0,Yes,Private,Urban,59.964367,32.839826,'formerly smoked',1
+Female,47.675938,0.621641,0,Yes,Private,Urban,63.06019,29.797455,'never smoked',1
+Male,79.102242,0,0,Yes,Private,Urban,259.655946,38.266086,smokes,1
+Male,59.053446,0.929459,0.253839,Yes,Private,Rural,249.267898,31.700611,'never smoked',1
+Male,73.257396,0,0,Yes,Private,Urban,219.902376,33.299583,'never smoked',1
+Male,75.51041,0.638285,0,Yes,Self-employed,Urban,132.314956,33.273617,'never smoked',1
+Male,78.237072,0.076262,0,Yes,Self-employed,Urban,93.065138,26.24837,'never smoked',1
+Female,80.710664,0.37696,0,Yes,Private,Urban,73.988299,24.888998,'never smoked',1
+Female,82,0.28301,0,Yes,Self-employed,Urban,199.736538,22.827678,'formerly smoked',1
+Female,74.304424,0,0,Yes,Self-employed,Rural,61.624889,28.893237,'formerly smoked',1
+Male,73,1,0,Yes,Self-employed,Rural,194.229109,35.490622,'never smoked',1
+Female,78.011362,0.60463,0.939878,Yes,Private,Urban,128.393126,24.859511,'never smoked',1
+Male,69.460514,0.924683,0,Yes,Private,Rural,189.853683,34.434392,'never smoked',1
+Female,45.15334,0,0,Yes,Private,Rural,102.07992,31.058731,'formerly smoked',1
+Female,63.287021,0.149853,0,Yes,Private,Urban,204.991036,26.75624,'never smoked',1
+Male,79.326119,0,0.307344,Yes,Private,Urban,258.811714,32.136393,smokes,1
+Male,76.45719,0,0.820099,Yes,Private,Urban,132.819217,26.114017,'formerly smoked',1
+Female,76,0.738225,0.237504,Yes,Private,Urban,200.393494,30.517237,Unknown,1
+Female,76,1,0.793486,Yes,Self-employed,Urban,197.862536,27.076316,'formerly smoked',1
+Male,71.227484,0,0.955284,Yes,Self-employed,Urban,196.217333,27.393471,'formerly smoked',1
+Male,76.030004,0,0.857281,Yes,Private,Urban,105.738044,26.468843,'formerly smoked',1
+Male,59,0,0,Yes,Private,Rural,112.574626,28.92255,'formerly smoked',1
+Female,74,0.788289,0,Yes,Private,Urban,73.954546,25.524358,'never smoked',1
+Male,69.735617,0.087687,0.247124,Yes,Self-employed,Urban,71.922612,35.767896,'never smoked',1
+Male,73.826683,0.790135,0,Yes,Private,Urban,219.937785,33.134293,'never smoked',1
+Male,63.880437,0,0,Yes,Private,Urban,139.561173,31.359038,'formerly smoked',1
+Male,63.229287,0.975009,0,Yes,Self-employed,Urban,70.436218,28.448441,smokes,1
+Female,79.742327,0,0.736356,Yes,Private,Urban,67.812448,24.479015,'never smoked',1
+Male,57.631543,0.298158,0,Yes,Private,Urban,69.755707,32.851875,'never smoked',1
+Male,72.137284,0.969788,0.725454,Yes,Private,Rural,240.457889,28.502335,'never smoked',1
+Male,79,0.874033,0,Yes,Private,Rural,171.083601,26.356182,'formerly smoked',1
+Male,67.541959,0,1,Yes,Private,Urban,228.025316,31.98122,'formerly smoked',1
+Male,80,0.105949,0,Yes,Private,Rural,74.184782,33.204652,'never smoked',1
+Female,68,0,0,Yes,Self-employed,Urban,81.717247,27.462027,'never smoked',1
+Female,51.665358,0.142728,0,Yes,Private,Rural,92.513834,26.154112,'never smoked',1
+Female,77.855093,0,0.269493,Yes,Private,Urban,232.915403,30.187685,'formerly smoked',1
+Female,50.91482,0,0,Yes,Private,Rural,102.458092,28.779623,smokes,1
+Male,57,0.460072,0,Yes,Private,Urban,212.520592,39.342405,smokes,1
+Male,69.734972,0,0.491119,Yes,Self-employed,Urban,195.667284,32.336977,'formerly smoked',1
+Female,80.091434,1,0,Yes,Private,Urban,74.430219,23.025014,'never smoked',1
+Female,75.779297,0,0,Yes,Self-employed,Rural,58.775155,28.893237,'formerly smoked',1
+Female,73.017287,0,0.564693,Yes,Self-employed,Urban,80.713605,29.010321,'never smoked',1
+Female,8.239026,0,0,Yes,Private,Urban,63.546735,30.733004,smokes,1
+Female,79.335021,0.418634,0.844951,Yes,Private,Urban,205.701345,37.541721,Unknown,1
+Female,73.096045,0.306903,0,Yes,Self-employed,Urban,89.610158,32.674727,Unknown,1
+Male,78,0.041705,0,Yes,Private,Urban,132.812521,22.644111,'formerly smoked',1
+Female,50.436521,0.287367,0,Yes,Private,Urban,162.304571,27.677376,'never smoked',1
+Male,79.566354,1,0,Yes,Private,Rural,72.926282,28.898459,'never smoked',1
+Female,79,0.723417,0,Yes,Private,Urban,97.990368,21.627813,'never smoked',1
+Male,79.438476,0,0,Yes,Self-employed,Rural,90.86046,31.718945,'formerly smoked',1
+Male,63.219723,0,0,Yes,Govt_job,Rural,111.75568,25.805784,'formerly smoked',1
+Female,78.048053,0.808426,0.561095,Yes,Self-employed,Rural,60.732062,28.893237,'formerly smoked',1
+Female,54.9905,0,0,Yes,Private,Urban,97.047914,28.612138,'formerly smoked',1
+Male,79.733116,0.275441,0,Yes,Self-employed,Rural,90.370102,32.432413,'formerly smoked',1
+Female,77.431591,0,0,Yes,Self-employed,Rural,60.957421,28.893237,'formerly smoked',1
+Male,72.605931,1,0,Yes,Private,Rural,185.719226,34.099569,'never smoked',1
+Female,78.458265,0,0,Yes,Private,Urban,69.824611,39.746464,'never smoked',1
+Female,77.302077,0.364494,0,Yes,Self-employed,Rural,60.815883,28.598104,'formerly smoked',1
+Female,79.297755,0,0,Yes,Self-employed,Urban,110.299365,28.893237,'formerly smoked',1
+Male,80.692501,0,0.247816,Yes,Private,Urban,213.383804,28.056508,Unknown,1
+Male,46.726295,0.207992,0,Yes,Private,Urban,74.392956,30.475609,'never smoked',1
+Male,59.706492,0,0.841882,Yes,Private,Urban,111.655487,29.303299,'formerly smoked',1
+Female,36.755522,0,0,Yes,Private,Urban,80.586726,26.426421,'never smoked',1
+Male,77.647659,0,0,Yes,Private,Urban,80.864316,24.180385,'formerly smoked',1
+Male,62.843807,0.312771,1,Yes,Private,Urban,113.864259,35.750868,'formerly smoked',1
+Male,69.419334,0,0,Yes,Private,Urban,133.949363,28.322332,'formerly smoked',1
+Male,61.900072,0.343416,1,Yes,Private,Urban,116.156933,36.091865,'formerly smoked',1
+Male,80.834963,0.89493,1,Yes,Private,Urban,219.058566,28.16237,Unknown,1
+Male,81.016557,0,0,Yes,Private,Rural,90.028153,27.110403,'formerly smoked',1
+Male,62.999022,0,0.254333,Yes,Private,Urban,208.789295,29.483426,Unknown,1
+Female,64.824892,0,0,Yes,Private,Urban,205.392692,42.808723,'formerly smoked',1
+Male,50.452639,0.172076,0,Yes,Private,Urban,107.66769,33.479143,'formerly smoked',1
+Male,60.722526,0.339419,0.436698,Yes,Private,Urban,116.4572,36.40452,'formerly smoked',1
+Male,72.704461,1,1,Yes,Private,Urban,267.458839,28.600053,smokes,1
+Male,70.954393,0,0,Yes,Private,Urban,97.788775,24.549854,Unknown,1
+Male,60.621559,0,0,Yes,Private,Rural,198.556151,29.448757,'formerly smoked',1
+Male,75.454776,1,0,Yes,Private,Rural,243.327453,35.209674,'formerly smoked',1
+Male,69.321342,0,0,Yes,Private,Urban,97.496647,27.061364,Unknown,1
+Male,79,0,0,Yes,Private,Urban,113.475092,26.138597,'never smoked',1
+Female,73.424464,0.295346,0,Yes,Private,Urban,74.717443,25.940476,'formerly smoked',1
+Male,74.565122,0,0,Yes,Private,Rural,168.508555,28.893237,'formerly smoked',1
+Male,80.895401,0.296302,0.038612,Yes,Private,Urban,181.428046,31.069094,'formerly smoked',1
+Male,77.180095,0.208765,0,Yes,Self-employed,Urban,91.015911,31.298346,'never smoked',1
+Female,77.833626,0,0,Yes,Self-employed,Urban,108.92976,30.862605,'formerly smoked',1
+Male,52.911445,0.027001,0,Yes,Private,Urban,87.947431,28.66928,Unknown,1
+Female,76.702262,0,0,Yes,Private,Urban,104.886219,29.996225,'never smoked',1
+Female,80.803794,0.703026,0,Yes,Private,Rural,77.356358,22.802584,'formerly smoked',1
+Female,78,0.866516,0,Yes,Private,Urban,92.226019,28.110727,'never smoked',1
+Male,78.426958,0.475444,0.007393,Yes,Self-employed,Urban,133.376581,29.155795,'never smoked',1
+Female,62.847896,0,0.627164,Yes,Private,Rural,109.548799,24.103487,Unknown,1
+Female,37.229541,0,0,Yes,Private,Urban,76.991077,26.395009,'never smoked',1
+Female,52.715911,0,0,Yes,Private,Rural,97.195402,27.641574,smokes,1
+Male,62.24151,0,0,Yes,Private,Urban,203.774591,29.320008,'never smoked',1
+Male,43.659397,0,0,Yes,Private,Urban,81.742118,23.540258,'never smoked',1
+Female,79.03444,0,0,Yes,Private,Urban,91.248445,23.222072,'never smoked',1
+Female,76.448092,0.606594,1,Yes,Private,Urban,203.847806,29.807714,'formerly smoked',1
+Male,78.278882,0,0,Yes,Private,Urban,114.823057,27.805453,'formerly smoked',1
+Male,56.923153,0.012,1,Yes,Private,Urban,213.805381,35.951888,'formerly smoked',1
+Female,79.925678,0.178857,0.313509,Yes,Self-employed,Urban,200.265043,28.906509,'formerly smoked',1
+Male,72.589079,0.112317,1,Yes,Private,Urban,218.75018,30.530995,'never smoked',1
+Male,78.86278,1,0.588622,Yes,Private,Urban,245.746515,32.493643,'formerly smoked',1
+Male,80.048402,0,0,Yes,Private,Urban,72.796375,28.173287,'never smoked',1
+Female,59.930088,0,0,Yes,Private,Urban,202.72891,42.021351,'formerly smoked',1
+Female,81,0,0,Yes,Private,Urban,72.111291,25.898568,'never smoked',1
+Female,53.573175,0,0,Yes,Private,Rural,104.832313,30.522733,smokes,1
+Male,57,0,1,Yes,Private,Urban,216.643516,29.511498,Unknown,1
+Male,81,0,0,Yes,Private,Rural,185.349767,28.757438,'formerly smoked',1
+Female,74.306765,0,0,Yes,Self-employed,Rural,60.461026,28.893237,'formerly smoked',1
+Female,39.877054,0,0,Yes,Private,Rural,96.561092,29.708733,smokes,1
+Female,79.532151,0.221404,0,Yes,Self-employed,Rural,63.106666,31.305257,'never smoked',1
+Female,81,0,0,Yes,Private,Rural,81.821569,20.475808,'never smoked',1
+Female,79,0,0,Yes,Private,Urban,96.030553,21.760668,'never smoked',1
+Male,73.107465,0,0,Yes,Private,Urban,71.246597,34.079681,'never smoked',1
+Female,78.991606,0.537857,0.595123,Yes,Self-employed,Urban,204.337733,29.987209,'formerly smoked',1
+Male,75.72205,0.184268,0,Yes,Private,Urban,219.870578,25.856587,'never smoked',1
+Female,67.776347,0,0,Yes,Private,Urban,206.821735,43.052618,'formerly smoked',1
+Male,57.470028,0,0,Yes,Private,Urban,87.780382,31.877033,Unknown,1
+Male,77.991745,0.242405,0,Yes,Private,Urban,171.871505,30.992417,'formerly smoked',1
+Male,52.909964,0.087658,0,Yes,Private,Urban,87.858543,30.898609,'never smoked',1
+Male,57.322164,0,0.66292,Yes,Private,Urban,90.700628,35.492655,Unknown,1
+Male,65.010439,0,0.902661,Yes,Self-employed,Rural,75.614717,26.856455,'formerly smoked',1
+Male,60.150617,0,0.975556,Yes,Private,Rural,197.09418,35.813746,'formerly smoked',1
+Male,68.282228,0.572887,0,Yes,Private,Rural,240.763697,45.043791,'formerly smoked',1
+Male,63.232903,1,0.844302,Yes,Private,Rural,249.197082,40.328466,'never smoked',1
+Male,57.922564,0,0,Yes,Private,Urban,86.013772,33.458283,smokes,1
+Female,5.566184,0,0,Yes,Private,Rural,59.726944,30.884854,smokes,1
+Male,76.290137,0,0,Yes,Private,Urban,80.779099,29.110452,'formerly smoked',1
+Male,69.357866,0.524246,0,Yes,Private,Urban,84.574668,28.188461,Unknown,1
+Female,80.923363,0,0,Yes,Private,Rural,81.207861,18.598076,'never smoked',1
