@@ -1,5 +1,4 @@
 import weka.core.*;
-import weka.classifiers.*;
 public class DataInfo {
     public static void dataInfo(Instances data) {
         System.out.println("=== DATASET OVERVIEW ===");

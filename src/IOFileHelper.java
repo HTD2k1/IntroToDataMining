@@ -32,7 +32,7 @@ public class IOFileHelper {
     }
 
     public static void saveClassifier(Classifier classifier, String fileName) throws Exception {
-        SerializationHelper.write(fileName, classifier);
+        SerializationHelper.write("models/"+fileName, classifier);
     }
     
     public static Classifier loadClassifier(String fileName) throws Exception {

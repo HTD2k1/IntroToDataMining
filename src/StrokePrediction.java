@@ -6,8 +6,6 @@ import weka.classifiers.functions.*;
 import weka.classifiers.trees.*;
 import java.util.ArrayList;
 import java.util.Random;
-import weka.filters.unsupervised.instance.Resample;
-
 
 public class StrokePrediction {
     public static Instances[] splitData(Instances data, double trainPercentage) {
@@ -34,7 +32,6 @@ public class StrokePrediction {
         ArrayList<String> classifierNames = new ArrayList<>();
         classifierNames.add("Logistic regression");
         classifierNames.add("J48");
-        //classifierNames.add("SVM");
         classifierNames.add("Random Forest");
         return classifierNames;
     }
@@ -70,10 +67,7 @@ public class StrokePrediction {
             Classifier classifier = classifiers.get(i);
             // Measure model building and prediction time
             long startTime = System.currentTimeMillis();
-            //data = addWeight(data);
             Evaluation evaluation = kFoldCrossValidation(classifier, data, 10, new Random(10),classifierNames.get(i));
-            // Evaluation evaluation = new Evaluation(data);
-            // evaluation.crossValidateModel(classifier, data,10, new Random(42));
             long endTime = System.currentTimeMillis();
             long totalTime = endTime - startTime;
 
@@ -178,8 +172,6 @@ public class StrokePrediction {
         IOFileHelper.saveFile(data,"preproccessed_stroke_data", "csv");
         ArrayList<Classifier> classifiers = getClassifiers();
         ArrayList<String> classifierNames = getClassifierNames();
-        //data = addSMOTEFilter(data);
         evaluateClassifiers(data, classifiers, classifierNames);
-
     }
 }

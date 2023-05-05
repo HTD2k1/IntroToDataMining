@@ -10,7 +10,7 @@ public class DataPreprocessing {
         data = processBmiAttribute(data);
         data = replaceMissingValues(data);
         data = convertStrokeAttributeToNominal(data);
-        
+        IOFileHelper.saveFile(data, "preproccessed_stroke_data", "arff");
         return data;
     }
 
