@@ -6,6 +6,8 @@ import weka.classifiers.functions.*;
 import weka.classifiers.trees.*;
 import java.util.ArrayList;
 import java.util.Random;
+import weka.filters.unsupervised.instance.Resample;
+
 
 public class StrokePrediction {
     public static Instances[] splitData(Instances data, double trainPercentage) {
@@ -22,7 +24,9 @@ public class StrokePrediction {
         ArrayList<Classifier> classifiers = new ArrayList<>();
         classifiers.add(new Logistic());
         classifiers.add(new J48());
-        classifiers.add(new RandomForest());
+        //classifiers.add(new SMO());
+        RandomForest rf = new RandomForest();
+        classifiers.add(rf);
         return classifiers;
     }
 
@@ -30,6 +34,7 @@ public class StrokePrediction {
         ArrayList<String> classifierNames = new ArrayList<>();
         classifierNames.add("Logistic regression");
         classifierNames.add("J48");
+        //classifierNames.add("SVM");
         classifierNames.add("Random Forest");
         return classifierNames;
     }
@@ -41,7 +46,9 @@ public class StrokePrediction {
         smote.setInputFormat(data);
 
         // Set the percentage of SMOTE instances to create (default is 100%)
-        smote.setPercentage(100);
+        int[] classCounts = DataInfo.countClasses(data, data.classIndex());
+        smote.setPercentage((double) (classCounts[0] - classCounts[1])/ classCounts[1] * 100);
+        //smote.setPercentage(100);
 
         // Set the number of nearest neighbors to consider (default is 5)
         smote.setNearestNeighbors(5);
@@ -63,23 +70,88 @@ public class StrokePrediction {
             Classifier classifier = classifiers.get(i);
             // Measure model building and prediction time
             long startTime = System.currentTimeMillis();
-            Evaluation evaluation = kFoldCrossValidation(classifier, data, 10, new Random(42),classifierNames.get(i));
+            //data = addWeight(data);
+            Evaluation evaluation = kFoldCrossValidation(classifier, data, 10, new Random(10),classifierNames.get(i));
+            // Evaluation evaluation = new Evaluation(data);
+            // evaluation.crossValidateModel(classifier, data,10, new Random(42));
             long endTime = System.currentTimeMillis();
             long totalTime = endTime - startTime;
 
             // Display model result
-            double auc = evaluation.areaUnderROC(data.classAttribute().indexOfValue("1"));
+            int classIndex = data.classAttribute().indexOfValue("1");
+            double auc = evaluation.areaUnderROC(classIndex);
             System.out.println(String.format("*** %s ***",classifierNames.get(i).toUpperCase()));
             System.out.println(String.format("** Area ROC: %.3f", auc));
+            System.out.println("F1 Score: "+ evaluation.fMeasure(1));
+            System.out.println(evaluation.toClassDetailsString());
             System.out.println(String.format("** Build and prediction time:%.3f s", (double) totalTime/1000));
-            System.out.println(evaluation.toSummaryString());
+            System.out.println(evaluation.toMatrixString());
 
+            System.out.println(evaluation.toSummaryString());
+            
             // Output binary file
             IOFileHelper.saveClassifier(classifier, classifierNames.get(i).toUpperCase() + ".model");
 
         }
     }
 
+    public static Instances addWeight(Instances data){
+                // Set the weights for instances based on class values
+                for (int i = 0; i < data.numInstances(); i++) {
+                    Instance instance = data.instance(i);
+                    double classValue = instance.classValue();
+        
+                    if (classValue == 1.0) {
+                        instance.setWeight(0.6);
+                    } else if (classValue == 0.0) {
+                        instance.setWeight(0.1);
+                    }
+                }
+                return data;
+    }
+    // public static void evaluateClassifiers(Instances data, ArrayList<Classifier> classifiers, ArrayList<String> classifierNames) throws Exception {
+
+    //     Instances[] splitData = splitData(data, 80);
+    //     Instances trainData = splitData[0];
+    //     Instances testData = splitData[1];
+    //     trainData = addSMOTEFilter(trainData);
+    //     trainData = addWeight(trainData);
+    //     DataInfo.checkIfDatasetImbalanced(testData);
+    //     System.out.println("=== MODEL EVALUATION ===");
+    //     DataInfo.checkIfDatasetImbalanced(trainData);
+    //     for (int i = 0; i < classifiers.size(); i++) {
+    //         Classifier classifier = classifiers.get(i);
+    //         // Measure model building and prediction time
+    //         long startTime = System.currentTimeMillis();
+    //         Evaluation evaluation = kFoldCrossValidation(classifier, trainData, 10, new Random(42),classifierNames.get(i));
+    //         long endTime = System.currentTimeMillis();
+    //         long totalTime = endTime - startTime;
+
+    //         // Display model result
+    //         double auc = evaluation.areaUnderROC(trainData.classAttribute().indexOfValue("1"));
+    //         System.out.println(String.format("*** %s ***",classifierNames.get(i).toUpperCase()));
+    //         System.out.println(String.format("** Area ROC: %.3f", auc));
+    //         System.out.println("F1 Score: "+ evaluation.weightedFMeasure());
+    //         System.out.println(String.format("** Build and prediction time:%.3f s", (double) totalTime/1000));
+    //         System.out.println(evaluation.toSummaryString());
+
+    //         // Final evaluation
+    //         Evaluation finalEval = new Evaluation(data);
+    //         finalEval.evaluateModel(classifier, testData);
+    //         System.out.println("======> Final evaluation ");
+    //         double finalAuc = finalEval.areaUnderROC(trainData.classAttribute().indexOfValue("1"));
+    //         System.out.println(String.format("** Area ROC: %.3f", finalAuc));
+    //         System.out.println("F1 Score: "+ finalEval.weightedFMeasure());
+    //         System.out.println(finalEval.toClassDetailsString());
+    //         System.out.println(evaluation.toSummaryString());
+
+        
+
+    //         // Output binary file
+    //         IOFileHelper.saveClassifier(classifier, classifierNames.get(i).toUpperCase() + ".model");
+
+    //     }
+    // }
 
     public static Evaluation kFoldCrossValidation(Classifier classifier, Instances data, int numFolds, Random random, String classifierName) throws Exception {
         data.randomize(random);
@@ -88,10 +160,11 @@ public class StrokePrediction {
         }
     
         Evaluation eval = new Evaluation(data);
+        
         for (int n = 0; n < numFolds; n++) {
             Instances train = data.trainCV(numFolds, n, random);
             Instances test = data.testCV(numFolds, n);
-    
+            train = addSMOTEFilter(train);
             classifier.buildClassifier(train);
             eval.evaluateModel(classifier, test);
         }
@@ -102,10 +175,10 @@ public class StrokePrediction {
         Instances data = IOFileHelper.loadData("./data/stroke-prediction-dataset/healthcare-dataset-stroke-data.csv");
         data = DataPreprocessing.run(data);
         DataInfo.overview(data);
-        data = addSMOTEFilter(data);
         IOFileHelper.saveFile(data,"preproccessed_stroke_data", "csv");
         ArrayList<Classifier> classifiers = getClassifiers();
         ArrayList<String> classifierNames = getClassifierNames();
+        //data = addSMOTEFilter(data);
         evaluateClassifiers(data, classifiers, classifierNames);
 
     }

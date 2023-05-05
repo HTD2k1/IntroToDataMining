@@ -1,3 +1,4 @@
+import java_cup.runtime.lr_parser;
 import weka.core.*;
 import weka.filters.*;
 import weka.filters.unsupervised.attribute.*;
@@ -5,6 +6,7 @@ import weka.filters.unsupervised.attribute.*;
 public class DataPreprocessing {
     public static Instances run(Instances data) throws Exception {    
         data = removeIdColumn(data);
+        data = numericToNominalValues(data);
         data = processBmiAttribute(data);
         data = replaceMissingValues(data);
         data = convertStrokeAttributeToNominal(data);
@@ -49,6 +51,14 @@ public class DataPreprocessing {
         
         return Filter.useFilter(data, replaceFilter);
     }
+
+    private static Instances numericToNominalValues(Instances data) throws Exception{
+     NumericToNominal filter = new NumericToNominal();
+     filter.setInputFormat(data);
+     filter.setAttributeIndices("3,4");
+     return Filter.useFilter(data, filter);
+    }
+    
 
     private static Instances convertStrokeAttributeToNominal(Instances data) throws Exception {
         NumericToNominal filter = new NumericToNominal();

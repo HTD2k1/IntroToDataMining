@@ -1,4 +1,5 @@
 import weka.core.*;
+import weka.classifiers.*;
 public class DataInfo {
     public static void dataInfo(Instances data) {
         System.out.println("=== DATASET OVERVIEW ===");
@@ -29,7 +30,7 @@ public class DataInfo {
         printClassPercentages(classCounts, data.numInstances());
     }
 
-    private static int[] countClasses(Instances data, int classIndex) {
+    public static int[] countClasses(Instances data, int classIndex) {
         int[] classCounts = new int[data.numClasses()];
         for (Instance instance : data) {
             classCounts[(int) instance.classValue()]++;
